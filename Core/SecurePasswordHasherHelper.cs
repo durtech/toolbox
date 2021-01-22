@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace Toolbox.Core
 {
-    public class SecurePasswordHasherHelper
+    public static class SecurePasswordHasherHelper
     {
         /// <summary>
         /// Size of salt

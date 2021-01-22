@@ -16,8 +16,8 @@ namespace Toolbox.Controller
         {
 
         }
-        [HttpGet]
-       public string ASPDOTNETCOREPASS()
+        [HttpPost("dotntecorepass")]
+       public string ASPDOTNETCOREPASS([FromBody] string value)
         {
             
             string hashed_password = SecurePasswordHasherHelper.Hash("12345");

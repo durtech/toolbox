@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Toolbox.Core
 {
-    public class CustomHttpClient
+    public class CustomHttpClient: HttpClient
     {
         public async Task<T> GetJsonAsync<T>(string requestUri)
         {

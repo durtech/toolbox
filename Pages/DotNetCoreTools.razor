@@ -1,0 +1,34 @@
+﻿@page "/dotnetcoretools"
+@using Toolbox.Core
+
+<h3>DotNetCoreTools</h3>
+<input type="text" @bind="password" @oninput="generateHash"/>
+<br />
+Hash: <br />
+
+
+
+<div class="input_copy_wrapper">
+    <div class="input_copy">
+        <span id="txt">@passwordHash</span>
+        <span class="icon right">
+            <img src="img/copy.png"
+                 title="Click to Copy" onclick="CopyToClipBoard('txt')">
+        </span>
+    </div>
+
+</div>
+
+@code {
+    private string passwordHash;
+    private string password = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        passwordHash = SecurePasswordHasherHelper.Hash(password);
+    }
+    private void generateHash()
+    {
+        passwordHash = SecurePasswordHasherHelper.Hash(password);
+    }
+}
